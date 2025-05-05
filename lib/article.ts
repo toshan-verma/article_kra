@@ -1,11 +1,13 @@
 import _ from "lodash";
 import articleModel from "../models/article";
 import mongoose from "../config/db";
-
+import log from '../utils/log';
+import categoryModel from "../models/category";
 class ArticleLib {
     static async placeArticle(payload: any) {
         try {
             // Log the payload
+            console.log("Placing article:", payload);
             const insertArticle: any = {
                 title: payload.title,
                 subTitle: payload.subTitle,
@@ -32,6 +34,7 @@ class ArticleLib {
 
     static async getAllOrder() {
         try {
+            console.log("Fetching all active articles");
             // Fetch all active articles
             const result = await articleModel.find({ isActive: true }, null, { sort: { createdAt: 1 }, lean: true });
 
@@ -61,6 +64,7 @@ class ArticleLib {
 
     static async getOrder(articleId: string) {
         try {
+            console.log("Fetching article with ID:", articleId);
             // Fetch the article with populated author and category details
             const result = await articleModel
                 .find({ _id: mongoose.Types.ObjectId(articleId), isActive: true }, null, { sort: { createdAt: 1 }, lean: true })

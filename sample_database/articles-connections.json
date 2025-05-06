@@ -1,0 +1,24 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "dbad6c03-8314-4ba3-9ed9-9531848c9959",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1746281304326"
+        }
+      },
+      "favorite": {
+        "name": "article_kra"
+      },
+      "savedConnectionType": "favorite",
+      "connectionOptions": {
+        "connectionString": "mongodb://localhost:27017/",
+        "oidc": {}
+      }
+    }
+  ]
+}

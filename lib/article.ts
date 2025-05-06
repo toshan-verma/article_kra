@@ -69,6 +69,7 @@ class ArticleLib {
             const result = await articleModel
                 .find({ _id: mongoose.Types.ObjectId(articleId), isActive: true }, null, { sort: { createdAt: 1 }, lean: true })
                 .populate('author_id', 'first_name last_name')
+                .populate('tags', 'name')
                 .populate('category_id', 'name');
 
             if (result.length === 0) {

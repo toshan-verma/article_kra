@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "fe047e4a-5c31-4430-b157-ee2cb559f791",
+		"name": "Article",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16388197"
+	},
+	"item": [
+		{
+			"name": "POST articles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"T1\",\r\n    \"subTitle\": \"ST1\",\r\n    \"property\": \"P1\",\r\n    \"description\": \"D1\",\r\n    \"article_image\": \"AI1\",\r\n    \"article_type\": \"AT1\",\r\n    \"mediaUrl\": \"MU\",\r\n    \"hyperlink\": \"HYL\",\r\n    \"category_id\": \"6818c55724a7a11229d79181\",\r\n    \"tags\": [\r\n        \"6818c4c3c0fa3109c9cf2d3e\",\r\n        \"6818ec604b686d97297d9159\"\r\n    ],\r\n    \"author_id\": \"6817b2f47d96a1ac441d880d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/1.1/api/v1/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"1.1",
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All articles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3002/1.1/api/v1/articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"1.1",
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get selected articles/6817b7f8f54c0de388804b99",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "sessionId=6686392e-8389-2b0f-5d85-d28c60cb959d"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3002/api/v1/articles/6817b7f8f54c0de388804b99",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"6817b7f8f54c0de388804b99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Del selected articles/68162f8ff0d8677bdc10eb25",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"userId\": \"test\",\r\n   \"symbol\": \"S\",\r\n   \"price\": 100,\r\n   \"quantity\": 1,\r\n   \"transactionType\": \"BUY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3002/1.1/api/v1/articles/6817b98edd961c54e06e2249",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"1.1",
+						"api",
+						"v1",
+						"articles",
+						"6817b98edd961c54e06e2249"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tags",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "sessionId=6686392e-8389-2b0f-5d85-d28c60cb959d"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3002/1.1/api/v1/tags",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"1.1",
+						"api",
+						"v1",
+						"tags"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all categories",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "sessionId=6686392e-8389-2b0f-5d85-d28c60cb959d; sessionId=6686392e-8389-2b0f-5d85-d28c60cb959d"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3002/1.1/api/v1/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"1.1",
+						"api",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
